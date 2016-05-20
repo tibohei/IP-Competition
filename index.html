@@ -33,9 +33,9 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#" ng-click="tab.setTab(1)">Game</a></li>
-            <li role="presentation"><a href="#" ng-click="tab.setTab(2)">Design</a></li>
-            <li role="presentation"><a href="#" ng-click="tab.setTab(3)">Team</a></li>
+            <li role="presentation" ng-class="{active:tab.isSet(1)}"><a href="#" ng-click="tab.setTab(1)">Game</a></li>
+            <li role="presentation" ng-class="{active:tab.isSet(2)}"><a href="#" ng-click="tab.setTab(2)">Design</a></li>
+            <li role="presentation" ng-class="{active:tab.isSet(3)}"><a href="#" ng-click="tab.setTab(3)">Team</a></li>
           </ul>
         </nav>
         <h3 class="text-muted">IP16 Competition</h3>
