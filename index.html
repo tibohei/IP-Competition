@@ -29,13 +29,13 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container" ng-controller="tabController as tab">
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Game</a></li>
-            <li role="presentation"><a href="#">Design</a></li>
-            <li role="presentation"><a href="#">Team</a></li>
+            <li role="presentation" class="active"><a href="#" ng-click="tab.setTab(1)">Game</a></li>
+            <li role="presentation"><a href="#" ng-click="tab.setTab(2)">Design</a></li>
+            <li role="presentation"><a href="#" ng-click="tab.setTab(3)">Team</a></li>
           </ul>
         </nav>
         <h3 class="text-muted">IP16 Competition</h3>
@@ -43,6 +43,9 @@
 
       <div class="jumbotron">
         <h1>{{'Hello,'+' Angular!'}}</h1>
+        <h4 ng-show="tab.isSet(1)">Tab 1</h4>
+        <h4 ng-show="tab.isSet(2)">Tab 2</h4>
+        <h4 ng-show="tab.isSet(3)">Tab 3</h4>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
       </div>
@@ -72,7 +75,7 @@
       </div>
 
       <footer class="footer">
-        <p>&copy; 2015 Company, Inc.</p>
+        <p>&copy; 2016 ETH Zurich</p>
       </footer>
 
     </div> <!-- /container -->
