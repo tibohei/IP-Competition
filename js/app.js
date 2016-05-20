@@ -17,28 +17,28 @@ app.controller('tabController',function(){
     return this.tab === checkTab;
   };
 });
-
+/* Something with this objects is wrong...
 var teams = [
   {
     name: '01a',
     system: {
-      mass: 2.0
+      mass: 2.0,
       sizeOK: false
     }
   },
   {
     name: '02a',
     system: {
-      mass: 3.0
+      mass: 3.0,
       sizeOK: true
     }
   },
   {
     name: '03a',
     system: {
-      mass: 2.5
+      mass: 2.5,
       sizeOK: true
   }
-];
+]; */
 
 })();
