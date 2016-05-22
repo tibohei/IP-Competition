@@ -41,6 +41,51 @@
         <h3 class="text-muted">IP16 Competition</h3>
       </div>
 
+      <!-- Game -->
+      <div ng-show="tab.isSet(1)">
+        <h4>Game</h4>
+        <p>
+          Register new game here.
+        </p>
+      </div>
+
+      <!-- Design -->
+      <div ng-show="tab.isSet(2)">
+        <h4>Design</h4>
+        <p>
+          Register design score here.
+        </p>
+      </div>
+
+      <!-- Team -->
+      <div ng-show="tab.isSet(3)" ng-controller="competitionController as competition">
+        <h4>Team</h4>
+        <p>
+          Register new team here.
+        </p>
+
+        <div class="table-responsive" >
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>team</th>
+                  <th>system's mass</th>
+                  <th>system's size OK?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="team in competition.teams">
+                  <td>{{team.name}}</td>
+                  <td>{{team.mass | number:2}} kg</td>
+                  <td>{{team.sizeOK}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+      </div>
+
+
       <div class="jumbotron">
         <h1>{{'Hello,'+' Angular!'}}</h1>
         <h4 ng-show="tab.isSet(1)">Tab 1</h4>
