@@ -17,28 +17,51 @@ app.controller('tabController',function(){
     return this.tab === checkTab;
   };
 });
-/* Something with this objects is wrong...
+
+app.controller("dataController", function(){
+
+    this.team = {};
+
+    this.addData = function(team){
+      this.team.modifiedOn = Date.now();
+      teams.push(this.team);
+      this.team = {};
+    };
+  });
+
+
+/* Something with this objects is wrong... */
 var teams = [
   {
     name: '01a',
-    system: {
+    mass: 2.0,
+    sizeOK: false,
+    modifiedOn: 0
+    /*system: {
       mass: 2.0,
       sizeOK: false
-    }
+    }*/
   },
   {
     name: '02a',
-    system: {
-      mass: 3.0,
-      sizeOK: true
-    }
+    mass: 3.0,
+    sizeOK: false,
+    modifiedOn: 0
+    /*system: {
+      mass: 2.0,
+      sizeOK: false
+    }*/
   },
   {
     name: '03a',
-    system: {
-      mass: 2.5,
-      sizeOK: true
+    mass: 2.5,
+    sizeOK: false,
+    modifiedOn: 0
+    /*system: {
+      mass: 2.0,
+      sizeOK: false
+    }*/
   }
-]; */
+];
 
 })();
