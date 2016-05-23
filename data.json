@@ -1,0 +1,20 @@
+[
+  {
+    "name": "01a",
+    "mass": 2.5,
+    "sizeOK": false,
+    "modifiedOn": 0
+  },
+  {
+    "name": "02a",
+    "mass": 3.0,
+    "sizeOK": false,
+    "modifiedOn": 0
+  },
+  {
+    "name": "03a",
+    "mass": 2.0,
+    "sizeOK": false,
+    "modifiedOn": 0
+  }
+]

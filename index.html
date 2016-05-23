@@ -63,26 +63,73 @@
         <p>
           Register new team here.
         </p>
+        <input type="text" name="name" value="" ng-model="search" class="form-control"/>
+        <!--  Review Form -->
+        <div ng-controller="dataController as dataCtrl">
 
-        <div class="table-responsive" >
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>team</th>
-                  <th>system's mass</th>
-                  <th>system's size OK?</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat="team in competition.teams">
-                  <td>{{team.name}}</td>
-                  <td>{{team.mass | number:2}} kg</td>
-                  <td>{{team.sizeOK}}</td>
-                </tr>
-              </tbody>
-            </table>
+
+          <form name="reviewForm" ng-submit="dataCtrl.addData(competition.teams)">
+
+            <!--  Live Preview
+            <blockquote >
+              <strong>{{reviewCtrl.review.stars}} Stars</strong>
+              {{reviewCtrl.review.body}}
+              <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
+            </blockquote> -->
+
+            <!--  Review Form -->
+            <h4>Edit data of team {{dataCtrl.team.name}}</h4>
+          <!--  <fieldset class="form-group">
+              <select ng-model="dataCtrl.team.name" class="form-control" ng-options="teams for teams in dataCtrl.teamNames" title="name">
+                <option value>Pick a team</option>
+              </select>
+            </fieldset> -->
+            <fieldset class="form-group">
+              <label>mass</label>
+              <input ng-model="dataCtrl.team.mass" type="number" class="form-control" placeholder="system's mass in kg" title="mass" min="0" step="0.01"/>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input type="button" class="btn btn-primary pull-right" name="name" value="clear form"/ ng-click="dataCtrl.clearForm()">
+            </fieldset>
+  <!--
+
+            <fieldset class="form-group">
+              <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+            </fieldset>
+            <fieldset class="form-group">
+              <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+            </fieldset> -->
+          </form>
+
+          <div class="table-responsive" >
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>team</th>
+                    <th>system's mass</th>
+                    <th>system's size OK?</th>
+                    <th>last modified</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="team in competition.teams | orderBy: 'name' | filter: search" ng-click="dataCtrl.loadData(team)">
+                    <td>
+                      <input type="button" name="edit" value="edit">
+                    </td>
+                    <td>{{team.name}}</td>
+                    <td>{{team.mass | number:2}} kg</td>
+                    <td>{{team.sizeOK}}</td>
+                    <td>{{team.modifiedOn | date:'medium'}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-
       </div>
 
 
